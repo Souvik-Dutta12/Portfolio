@@ -1,15 +1,16 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-
+import { useTheme } from "@/context/themeContext"; // your custom ThemeContext
 
 function Navbar({ className }: { className?: string }) {
     const [active, setActive] = useState<string | null>(null);
     const [activeLink, setActiveLink] = useState("Home");
-    const [isDark, setIsDark] = useState(false)
+
+    const { theme, toggleTheme } = useTheme(); 
 
     const links = [
         { name: "Home", icon: "ri-home-3-line", href: "#" },
@@ -19,56 +20,49 @@ function Navbar({ className }: { className?: string }) {
         { name: "Contact", icon: "ri-mail-line", href: "#" },
     ];
 
-    useEffect(() => {
-        // Check local storage on load
-        const darkMode = localStorage.getItem('theme') === 'dark';
-        setIsDark(darkMode);
-        document.documentElement.classList.toggle('dark', darkMode);
-    }, []);
-
-    const toggleTheme = () => {
-        const newTheme = !isDark;
-        setIsDark(newTheme);
-        document.documentElement.classList.toggle('dark', newTheme);
-        localStorage.setItem('theme', newTheme ? 'dark' : 'light');
-    };
     return (
         <div
-            className={cn("fixed  top-10 inset-x-0 max-w-2xl mx-auto z-50 ", className)}
+            className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
         >
             <Menu setActive={setActive}>
                 <div className="flex items-center justify-between gap-15 font-semibold">
                     <div className="flex items-center justify-evenly gap-2">
-                        {
-                            links.map((link, indx) => (
-                                <Link href={link.href} key={indx} onClick={() => setActiveLink(link.name)}>
-
-                                    <button className={cn("flex items-center justify-center gap-1  p-3 rounded-xl duration-300 cursor-none", activeLink === link.name ? "bg-amber-100 text-black dark:bg-zinc-800 dark:text-white" : "bg-amber-50 hover:bg-amber-100 text-black dark:bg-black dark:hover:bg-zinc-800 dark:text-zinc-400")}>
-                                        <i className={`${link.icon}`}></i>
-                                        <span>{link.name}</span>
-                                    </button>
-
-
-                                </Link>
-                            ))
-                        }
+                        {links.map((link, indx) => (
+                            <Link href={link.href} key={indx} onClick={() => setActiveLink(link.name)}>
+                                <button
+                                    className={cn(
+                                        "flex items-center justify-center gap-1 p-3 rounded-xl duration-300 cursor-none",
+                                        activeLink === link.name
+                                            ? "bg-amber-100 text-black dark:bg-zinc-800 dark:text-white"
+                                            : "bg-amber-50 hover:bg-amber-100 text-black dark:bg-black dark:hover:bg-zinc-800 dark:text-zinc-400"
+                                    )}
+                                >
+                                    <i className={`${link.icon}`}></i>
+                                    <span>{link.name}</span>
+                                </button>
+                            </Link>
+                        ))}
                     </div>
 
                     <button
                         onClick={toggleTheme}
                         className={cn(
                             "flex items-center justify-center gap-1 p-3 rounded-xl duration-300 cursor-none",
-                            isDark ? "bg-amber-100 text-black dark:bg-zinc-800 dark:text-white" : "bg-amber-50 hover:bg-amber-100 text-black dark:bg-black dark:hover:bg-zinc-800 dark:text-zinc-400"
+                            theme === "dark"
+                                ? "bg-zinc-800 text-white"
+                                : "bg-amber-50 hover:bg-amber-100 text-black"
                         )}
                     >
-                        {isDark ? <i className="ri-moon-clear-line"></i> : <i className="ri-sun-line"></i>}
+                        {theme === "dark" ? (
+                            <i className="ri-moon-fill"></i>
+                        ) : (
+                            <i className="ri-sun-line"></i>
+                        )}
                     </button>
-
-
                 </div>
             </Menu>
         </div>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;
