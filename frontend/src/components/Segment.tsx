@@ -50,11 +50,16 @@ const Segment: React.FC = () => {
       onMouseLeave={handleMouseLeave}
     >
       {/* SVG width updated */}
-      <svg width="820" height="200">
+      <svg
+        width="100%"
+        height="200"
+        viewBox="0 0 840 200" // wider viewBox
+        preserveAspectRatio="none"
+      >
         <path
           ref={pathRef}
           d={initialPath}
-          className="stroke-amber-500 dark:stroke-white  stroke-2 fill-transparent"
+          className="stroke-amber-500 dark:stroke-white stroke-2 fill-transparent"
         />
       </svg>
     </div>
