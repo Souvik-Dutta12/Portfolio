@@ -1,7 +1,6 @@
 "use client";
 
 import { useTheme } from "@/context/themeContext";
-import { Particles } from "@/components/magicui/particles";
 import Image from "next/image";
 import { MorphingText } from "@/components/magicui/morphing-text";
 import {
@@ -9,13 +8,14 @@ import {
     TooltipContent,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { Button } from "@/components/ui/button"
 
 
 const Hero = () => {
     const { theme } = useTheme();
 
     return (
-        <div className="absolute min-h-screen w-full mx-auto overflow-hidden z-20 pt-30 flex flex-col items-center justify-center bg-transparent text-black  dark:text-zinc-400 px-6 sm:px-12">
+        <div className=" min-h-screen w-full mx-auto overflow-hidden z-20 pt-30 flex flex-col items-center justify-center bg-transparent text-black  dark:text-zinc-400 px-6 sm:px-12">
 
 
             <div className="max-w-4xl w-full mx-auto flex flex-col md:flex-col items-center gap-7">
@@ -45,31 +45,50 @@ const Hero = () => {
 
 
 
-                        <p className="mt-6 text-xl font-semibold leading-relaxed text-zinc-400">
-  I'm a <span className="font-semibold text-white">Full-stack Developer</span> who talks to APIs more than humans and builds cool things that somehow work — most of the time. I love turning ideas into products, like <span className="text-amber-400 font-semibold">PrepBot AI</span>, where interviews meet AI, or <span className="text-amber-400 font-semibold"><Tooltip>
-  <TooltipTrigger>Devplay</TooltipTrigger>
-  <TooltipContent>
-    <p>just checking</p>
-  </TooltipContent>
-</Tooltip></span>, my way of bringing dev videos into a platform made for builders. I’ve also explored language learning through <span className="text-amber-400 font-semibold">Kothamala AI</span>, and recently built <span className="text-amber-400 font-semibold">Blogger</span>, a clean space where writing and AI go hand in hand. Whether it's backend logic or frontend polish, I'm always building, breaking, and learning.
-</p>
+                    <p className="mt-6 text-xl font-semibold leading-relaxed text-zinc-400">
 
 
 
-                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a
-                            href="/resume.pdf"
-                            target="_blank"
-                            className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-full shadow-md transition"
+                           I’m a 
+                           <span className="font-semibold text-amber-500 dark:text-white ">Full-stack Developer</span>
+                            who spends more time chatting with APIs than people, crafting projects that usually work — and occasionally surprise me. I turn ideas into reality, from  
+                            <span className="text-amber-400 font-semibold cursor-none">
+                                <Tooltip>
+                                    <TooltipTrigger className="cursor-none">
+                                            Kothamala AI
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                        <p>An ai chatbot</p>
+                                    </TooltipContent>
+                                </Tooltip>
+                            </span> 
+                            , a dive into language learning, to  
+                            <span className="text-amber-400 font-semibold">
+                                <Tooltip>
+                                    <TooltipTrigger className="cursor-none">
+                                        Blogger
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                        <p>A fullstack blogging platform</p>
+                                    </TooltipContent>
+                                </Tooltip>
+                            </span>
+                            , where clean design meets AI-powered writing. Whether it’s perfecting backend logic or polishing frontend details, I’m always building, breaking, and learning along the way.
+                    </p>
+
+
+
+                    <div className="mt-3 mx-auto flex text-lg flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <Button variant={"outline"}
+                            className="font-semibold px-6 py-5  shadow-md transition cursor-none"
                         >
-                            📄 Resume
-                        </a>
-                        <a
-                            href="#contact"
-                            className="bg-transparent border border-amber-500 hover:bg-amber-500 text-white hover:text-black font-semibold px-6 py-3 rounded-full transition"
+                            <i className="ri-download-line"></i>Resume
+                        </Button>
+                        <Button variant={"default"}
+                            className="  font-semibold px-6 py-5 shadow-md transition cursor-none"
                         >
-                            🤝 Connect
-                        </a>
+                            <i className="ri-shake-hands-fill"></i>Connect
+                        </Button>
                     </div>
                 </div>
             </div>

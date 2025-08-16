@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Hero from "@/components/Hero";
 import { Particles } from "@/components/magicui/particles";
 import { useTheme } from "@/context/themeContext";
+import Segment from "@/components/Segment";
 
 export default function Home() {
 
@@ -24,7 +25,9 @@ export default function Home() {
             />
         <Hero />
 
-      {/* <section id="about" className="min-h-screen px-8 py-20">
+      <Segment />
+
+       <section id="about" className="min-h-screen px-8 py-20">
         <h2 className="text-4xl font-semibold mb-6 text-center">About Me</h2>
         <p className="text-lg max-w-3xl mx-auto leading-relaxed">
           I'm a self-driven developer who loves to solve real-world problems with code.
@@ -87,7 +90,7 @@ export default function Home() {
         >
           souvik@example.com
         </a>
-      </section> */}
+      </section> 
     </div>  
     );
 }

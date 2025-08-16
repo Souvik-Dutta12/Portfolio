@@ -9,12 +9,11 @@ import { useTheme } from "@/context/themeContext"; // your custom ThemeContext
 function Navbar({ className }: { className?: string }) {
     const [active, setActive] = useState<string | null>(null);
     const [activeLink, setActiveLink] = useState("Home");
-
     const { theme, toggleTheme } = useTheme(); 
 
     const links = [
-        { name: "Home", icon: "ri-home-3-line", href: "#" },
-        { name: "About", icon: "ri-user-3-line", href: "#" },
+        { name: "Home", icon: "ri-home-3-line", href: "/" },
+        { name: "About", icon: "ri-user-3-line", href: "/about" },
         { name: "Projects", icon: "ri-code-s-slash-line", href: "#" },
         { name: "Experiences", icon: "ri-briefcase-line", href: "#" },
         { name: "Contact", icon: "ri-mail-line", href: "#" },
