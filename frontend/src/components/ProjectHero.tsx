@@ -19,24 +19,20 @@ const ProjectHero = () => {
   const people = [
     {
       id: 1,
-      name: "John Doe",
-      image:
-        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+      name: "React",
+      icon: <i className="ri-reactjs-fill text-sky-400 text-xl"></i>,
     },
     {
       id: 2,
-      name: "Robert Johnson",
-      image:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      name: "Tailwind CSS",
+      icon: <i className="ri-tailwind-css-fill text-teal-400 text-xl"></i>,
     },
     {
       id: 3,
-      name: "Jane Smith",
-      image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      name: "Clerk",
+      icon: <i className="ri-shield-user-fill text-violet-500 text-xl"></i>,
     },
-
-  ];
+  ]
 
   const Skeleton = () => (
     <div className="relative w-full h-full min-h-[6rem] rounded-xl border border-transparent dark:border-white/20 bg-neutral-100 dark:bg-black overflow-hidden">

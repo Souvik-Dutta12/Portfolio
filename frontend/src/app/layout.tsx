@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import 'remixicon/fonts/remixicon.css'
 import { ThemeProvider } from "@/context/themeContext";
+import Footer from "@/components/Footer";
 
 
 export default function RootLayout({
@@ -26,6 +27,7 @@ export default function RootLayout({
         {children}
         <SmoothCursor />
         
+        <Footer />
         </ThemeProvider>
       </body>
     </html>

@@ -7,6 +7,7 @@ import { useTheme } from "@/context/themeContext";
 import Segment from "@/components/Segment";
 import About from "@/components/About";
 import ProjectHero from "@/components/ProjectHero";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
 
@@ -37,7 +38,7 @@ export default function Home() {
         <ProjectHero />
       </div>
 
-      <section id="experience" className="min-h-screen px-8 py-20">
+      <section id="experience" className="px-8 pt-20">
         <h2 className="text-4xl font-semibold mb-8 text-center">Experiences</h2>
         <div className="max-w-3xl mx-auto space-y-6">
           <div>
@@ -59,18 +60,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="min-h-screen px-8 py-20 text-center">
-        <h2 className="text-4xl font-semibold mb-6">Contact</h2>
-        <p className="text-lg max-w-xl mx-auto">
-          Want to work together or just say hi? Reach out via email at:
-        </p>
-        <a
-          href="mailto:souvik@example.com"
-          className="mt-4 inline-block text-lg underline underline-offset-4 text-primary hover:text-primary-focus"
-        >
-          souvik@example.com
-        </a>
-      </section>
+      <Segment />
+      
     </div>
   );
 }
