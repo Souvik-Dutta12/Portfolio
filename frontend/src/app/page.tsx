@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Hero from "@/components/Hero";
 import { Particles } from "@/components/magicui/particles";
@@ -7,7 +6,6 @@ import { useTheme } from "@/context/themeContext";
 import Segment from "@/components/Segment";
 import About from "@/components/About";
 import ProjectHero from "@/components/ProjectHero";
-import { Button } from "@/components/ui/button";
 
 export default function Home() {
 

@@ -14,6 +14,7 @@ import Image from 'next/image';
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 
 const ProjectHero = () => {
+  
 
 
   const people = [

@@ -14,14 +14,14 @@ function Navbar({ className }: { className?: string }) {
     const links = [
         { name: "Home", icon: "ri-home-3-line", href: "/" },
         { name: "About", icon: "ri-user-3-line", href: "/about" },
-        { name: "Projects", icon: "ri-code-s-slash-line", href: "#" },
+        { name: "Projects", icon: "ri-code-s-slash-line", href: "/project" },
         { name: "Experiences", icon: "ri-briefcase-line", href: "#" },
         { name: "Contact", icon: "ri-mail-line", href: "#" },
     ];
 
     return (
         <div
-            className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+            className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-100", className)}
         >
             <Menu setActive={setActive}>
                 <div className="flex items-center justify-between gap-15 font-semibold">
